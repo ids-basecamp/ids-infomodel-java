@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2022 Microsoft Corporation
+ *  Copyright (c) 2023 truzzt GmbH
  *
  *  This program and the accompanying materials are made available under the
  *  terms of the Apache License, Version 2.0 which is available at
@@ -14,11 +14,34 @@
 
 plugins {
     `java-library`
+    `maven-publish`
 }
 
 val jacksonVersion: String by project
+val artifactGroup: String by project
+val artifactVersion: String by project
 
 dependencies {
     implementation("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = artifactGroup
+            artifactId = "util"
+            version = artifactVersion
+
+            from(components["java"])
+
+            pom {
+                name.set("util")
+            }
+        }
+    }
+}
