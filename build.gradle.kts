@@ -18,8 +18,6 @@ plugins {
 }
 
 val javaVersion: String by project
-val gitHubUser: String? by project
-val gitHubToken: String? by project
 
 java {
     toolchain {
@@ -70,17 +68,6 @@ configure<PublishingExtension> {
                     developerConnection.set("git@github.com:ids-basecamp/ids-infomodel-java.git")
                     url.set("https://github.com/ids-basecamp/ids-infomodel-java.git")
                 }
-            }
-        }
-    }
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/ids-basecamp/ids-infomodel-java")
-
-            credentials {
-                username = gitHubUser
-                password = gitHubToken
             }
         }
     }

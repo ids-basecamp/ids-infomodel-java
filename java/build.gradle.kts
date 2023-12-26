@@ -22,6 +22,11 @@ val validationApiVersion: String by project
 val artifactGroup: String by project
 val artifactVersion: String by project
 
+val gitHubPkgsName: String by project
+val gitHubPkgsUrl: String by project
+val gitHubUser: String? by project
+val gitHubToken: String? by project
+
 dependencies {
     implementation(project(":util"))
 
@@ -47,6 +52,17 @@ publishing {
 
             pom {
                 name.set("java")
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = gitHubPkgsName
+            url = uri(gitHubPkgsUrl)
+
+            credentials {
+                username = gitHubUser
+                password = gitHubToken
             }
         }
     }
