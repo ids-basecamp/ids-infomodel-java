@@ -28,12 +28,12 @@ val gitHubUser: String? by project
 val gitHubToken: String? by project
 
 dependencies {
-    implementation(project(":util"))
+    api(project(":util"))
 
-    implementation("javax.validation:validation-api:${validationApiVersion}")
-    implementation("com.fasterxml.jackson.core:jackson-core:${jacksonVersion}")
-    implementation("com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}")
-    implementation("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
+    api("javax.validation:validation-api:${validationApiVersion}")
+    api("com.fasterxml.jackson.core:jackson-core:${jacksonVersion}")
+    api("com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}")
+    api("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
 }
 
 java {

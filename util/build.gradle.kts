@@ -27,7 +27,7 @@ val gitHubUser: String? by project
 val gitHubToken: String? by project
 
 dependencies {
-    implementation("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
+    api("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
 }
 
 java {
