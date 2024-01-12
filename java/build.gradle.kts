@@ -22,10 +22,10 @@ val validationApiVersion: String by project
 val artifactGroup: String by project
 val artifactVersion: String by project
 
-val gitHubPkgsName: String by project
-val gitHubPkgsUrl: String by project
-val gitHubUser: String? by project
-val gitHubToken: String? by project
+val publishRepoName: String by project
+val publishRepoUrl: String by project
+val publishUserName: String? by project
+val publishUserPassword: String? by project
 
 dependencies {
     api(project(":util"))
@@ -57,12 +57,12 @@ publishing {
     }
     repositories {
         maven {
-            name = gitHubPkgsName
-            url = uri(gitHubPkgsUrl)
+            name = publishRepoName
+            url = uri(publishRepoUrl)
 
             credentials {
-                username = gitHubUser
-                password = gitHubToken
+                username = publishUserName
+                password = publishUserPassword
             }
         }
     }
