@@ -26,8 +26,9 @@ jobs:
           echo "VERSION=${TAG#v}" >> $GITHUB_ENV
 
       - name: Build project
-        run: ./gradlew clean build \
-          -PartifactVersion=${VERSION}
+        run: | 
+            ./gradlew clean build \
+            -PartifactVersion=${VERSION}
 
       - name: Publish to maven registry
         run: |
