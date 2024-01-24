@@ -39,13 +39,13 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = artifactGroup
-            artifactId = "util"
+            artifactId = "infomodel-util"
             version = artifactVersion
 
             from(components["java"])
 
             pom {
-                name.set("util")
+                name.set("infomodel-util")
             }
         }
     }
