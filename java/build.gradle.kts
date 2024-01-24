@@ -45,13 +45,13 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = artifactGroup
-            artifactId = "java"
+            artifactId = "infomdel-java"
             version = artifactVersion
 
             from(components["java"])
 
             pom {
-                name.set("java")
+                name.set("infomdel-java")
             }
         }
     }
